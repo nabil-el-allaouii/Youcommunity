@@ -6,8 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use app\Models\Events;
-use app\Models\Comments;
+use App\Models\Event;
+use App\Models\Comment;
 
 class User extends Authenticatable
 {
@@ -48,11 +48,11 @@ class User extends Authenticatable
         ];
     }
 
-    public function event(){
-        return $this->hasMany(Events::class);
+    public function events(){
+        return $this->hasMany(Event::class);
     }
 
     public function comments(){
-        return $this->hasMany(Comments::class);
+        return $this->hasMany(Comment::class);
     }
 }
