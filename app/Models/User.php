@@ -55,4 +55,8 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
+    public function participate(){
+        return $this->belongsToMany(Event::class , 'rspvs')->withTimestamps();
+    }
 }

@@ -68,26 +68,24 @@
             <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Featured Events</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Event Cards -->
-                    @foreach(['Tech Innovation Summit', 'Creative Art Workshop', 'Wellness & Fitness Expo'] as $index => $event)
+                    <!-- Event Card -->
+                    @foreach ($events as $event)
                     <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
-                        <img src="{{ asset('images/event-' . ($index + 1) . '.jpg') }}" class="h-48 w-full object-cover" alt="{{ $event }}">
+                        <img src="{{ asset('images/event-1.jpg') }}" class="h-48 w-full object-cover" alt="Tech Innovation Summit">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-900">{{ $event }}</h3>
+                            <h3 class="text-xl font-semibold text-gray-900">{{$event->title}}</h3>
                             <div class="mt-2 flex items-center text-sm text-gray-500">
                                 <i class="far fa-calendar mr-2"></i>
-                                <span>March {{ 15 + ($index * 5) }}, 2024</span>
+                                <span>{{$event->date_heure->format('Y/m/d')}}</span>
                             </div>
                             <div class="mt-2 flex items-center text-sm text-gray-500">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>{{ ['Convention Center', 'Art Studio Central', 'City Sports Complex'][$index] }}</span>
+                                <span>{{$event->lieu}}</span>
                             </div>
                             <p class="mt-3 text-base text-gray-500 line-clamp-2">
-                                {{ ['Join industry leaders and innovators for a day of inspiring talks and networking opportunities.',
-                                           'Express your creativity in this hands-on workshop led by professional artists.',
-                                           'Discover the latest in fitness and wellness with expert-led sessions and demos.'][$index] }}
+                                {{$event->description}}
                             </p>
-                            <button class="!rounded-button mt-4 w-full bg-custom text-white py-2 hover:bg-custom/90">RSVP Now</button>
+                            <a href="{{Route('event.details', $event->id)}}"><button class="!rounded-button mt-4 w-full bg-custom text-white py-2 hover:bg-custom/90">Details</button></a>
                         </div>
                     </div>
                     @endforeach
@@ -98,7 +96,7 @@
         <!-- How It Works Section -->
 
         <!-- Stats Section -->
-        
+
     </main>
 
     <!-- Footer -->

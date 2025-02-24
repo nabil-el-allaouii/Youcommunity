@@ -26,7 +26,7 @@
             <header class="bg-white shadow">
                 <div class="bg-white shadow-sm border-b py-3 px-4">
                     <nav class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-                        <img src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo" class="h-8" />
+                        <a href="/"><img src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo" class="h-8" /></a>
                         <div class="flex items-center space-x-6">
                             <a href="{{ route('dashboard') }}" class="flex items-center text-sm font-medium {{ request()->routeIs('dashboard') ? 'text-gray-900' : 'text-gray-600' }} hover:text-custom">
                                 <i class="fas fa-home w-5 h-5 mr-2"></i>
@@ -36,7 +36,7 @@
                                 <i class="fas fa-user w-5 h-5 mr-2"></i>
                                 <span class="hidden sm:inline">Profile</span>
                             </a>
-                            <a href="#" class="flex items-center text-sm font-medium text-gray-600 hover:text-custom">
+                            <a href="{{Route('my.events')}}" class="flex items-center text-sm font-medium text-gray-600 hover:text-custom">
                                 <i class="fas fa-calendar w-5 h-5 mr-2"></i>
                                 <span class="hidden sm:inline">Events</span>
                             </a>

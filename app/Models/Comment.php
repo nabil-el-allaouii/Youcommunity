@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Event;
 class Comment extends Model
 {
+
+    protected $fillable = ['content', 'user_id', 'event_id'];
     public function user(){
         return $this->belongsTo(User::class);
     }
