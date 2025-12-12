@@ -141,7 +141,7 @@ This project is open-source and available under the MIT License.
 
 **Nabil El allaouii**
 - GitHub: [@nabil-el-allaouii](https://github.com/nabil-el-allaouii)
-- Email: nabil@example.com
+- Email: nabilel460@gmail.com
 
 ---
 
